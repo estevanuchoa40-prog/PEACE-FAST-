@@ -1,72 +1,282 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Loja Barba Genya</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Peace Fast - Loja Oficial</title>
+
 <style>
-    body { font-family: Arial, sans-serif; background: #f7f7f7; margin: 0; padding: 20px; }
-    .header { background: #ff7f00; padding: 20px; color: white; text-align: center; border-radius: 8px; }
-    .container { max-width: 900px; margin: auto; }
-    .produto { background: white; padding: 15px; margin: 15px 0; border-radius: 6px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
-    .produto h2 { margin: 0; color: #333; }
-    .preco { font-size: 22px; font-weight: bold; color: #ff5d00; margin-top: 10px; }
-    .link { display: inline-block; margin-top: 10px; padding: 10px; background: #ff7f00; color: white; text-decoration: none; border-radius: 4px; }
+    body {
+        font-family: Arial, sans-serif;
+        background: #f6f6f6;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background: black;
+        color: white;
+        text-align: center;
+        padding: 25px 0;
+        font-size: 28px;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .card {
+        background: white;
+        border-radius: 12px;
+        padding: 15px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+
+    .card img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .title {
+        font-size: 15px;
+        font-weight: bold;
+        margin-top: 10px;
+        color: #222;
+    }
+
+    .price {
+        font-size: 18px;
+        color: #0a7d00;
+        margin: 8px 0;
+    }
+
+    .btn {
+        display: block;
+        background: #ffcf00;
+        padding: 10px;
+        border-radius: 10px;
+        margin-top: 10px;
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
 </style>
 </head>
 
 <body>
-<div class="container">
 
-<div class="header">
-    <h1>🌞 LOJA OFICIAL BARBA GENYA</h1>
-    <p>Skincare • Protetores • Make • Preços Promocionais</p>
+<header>🛒 Peace Fast - Loja Oficial</header>
+
+<div class="grid">
+
+<!-- Produto 1 -->
+<div class="card">
+    <img src="https://mercadolivre.com/sec/1hU3Jre" />
+    <div class="title">Principia Creme Calmante CM-01</div>
+    <div class="price">R$ 42,31</div>
+    <a class="btn" href="https://mercadolivre.com/sec/1hU3Jre" target="_blank">Comprar</a>
 </div>
 
-<!-- PROTETORES PRINCIPIA -->
-<div class="produto">
-    <h2>Principia – Protetor Solar Facial PS-01 FPS 60 (40 ml)</h2>
-    <p>Toque seco • Anti-oleosidade • 5% Niacinamida</p>
-    <p class="preco">R$ 44,00</p>
-    <a class="link" href="https://mercadolivre.com/sec/2NhdKdU">Comprar</a>
+<!-- Produto 2 -->
+<div class="card">
+    <img src="https://mercadolivre.com/sec/1SzdS8D" />
+    <div class="title">Sérum Verde</div>
+    <div class="price">R$ 79,00</div>
+    <a class="btn" href="https://mercadolivre.com/sec/1SzdS8D" target="_blank">Comprar</a>
 </div>
 
-<div class="produto">
-    <h2>Kit 2x Principia PS-01 FPS 60 (40 ml cada)</h2>
-    <p>Melhor custo-benefício para uso diário</p>
-    <p class="preco">R$ 81,84 (7% OFF)</p>
-    <a class="link" href="https://mercadolivre.com/sec/2v2TrXy">Comprar</a>
+<!-- Produto 3 -->
+<div class="card">
+    <img src="https://mercadolivre.com/sec/1JAWtev" />
+    <div class="title">Principia Sérum Mix-01</div>
+    <div class="price">R$ 64,00</div>
+    <a class="btn" href="https://mercadolivre.com/sec/1JAWtev" target="_blank">Comprar</a>
 </div>
 
-<div class="produto">
-    <h2>Kit Trio Principia – PS-01 FPS60 + PS-03 FPS45 + PS-03 FPS60</h2>
-    <p>Combo completo para rosto e corpo</p>
-    <p class="preco">R$ 145,80 (10% OFF)</p>
-    <a class="link" href="https://mercadolivre.com/sec/2tvryjJ">Comprar</a>
+<!-- Produto 4 -->
+<div class="card">
+    <img src="https://mercadolivre.com/sec/1ivkbfr" />
+    <div class="title">Principia Retinol 0,3%</div>
+    <div class="price">R$ 53,59</div>
+    <a class="btn" href="https://mercadolivre.com/sec/1ivkbfr" target="_blank">Comprar</a>
 </div>
 
-<!-- PROTETORES NUTRIEX -->
-<div class="produto">
-    <h2>Nutriex FPS 60 com Repelente – 120ml</h2>
-    <p>Proteção solar + repelente</p>
-    <p class="preco">R$ 24,90</p>
-    <a class="link" href="https://mercadolivre.com/sec/2CMCRU5">Comprar</a>
+<!-- Produto 5 -->
+<div class="card">
+    <img src="https://mercadolivre.com/sec/27jqPJg" />
+    <div class="title">Kit Anti-Manchas Essencial</div>
+    <div class="price">R$ 189,90</div>
+    <a class="btn" href="https://mercadolivre.com/sec/27jqPJg" target="_blank">Comprar</a>
 </div>
 
-<div class="produto">
-    <h2>Kit 2x Nutriex FPS 60 com Repelente – 120ml cada</h2>
-    <p>KIT com super desconto</p>
-    <p class="preco">R$ 49,69 (26% OFF)</p>
-    <a class="link" href="https://mercadolivre.com/sec/1m7n1rF">Comprar</a>
+<!-- Produto 6 -->
+<div class="card">
+    <img src="https://mercadolivre.com/sec/314PknJ" />
+    <div class="title">Kit Essencial GL-03 + CH + VC + PS</div>
+    <div class="price">R$ 176,40</div>
+    <a class="btn" href="https://mercadolivre.com/sec/314PknJ" target="_blank">Comprar</a>
 </div>
 
-<!-- MAQUIAGEM -->
-<div class="produto">
-    <h2>Pó Facial Solto Plush – Fran by Franciny Ehlke</h2>
-    <p>Cor Bege Claro – 15g</p>
-    <p class="preco">R$ 48,27</p>
-    <a class="link" href="https://mercadolivre.com/sec/2gNHnKv">Comprar</a>
+<!-- Produto 7 -->
+<div class="card">
+    <img src="https://mercadolivre.com/sec/2dSnDSH" />
+    <div class="title">Kit GL-02 + VC-10 + PS-01</div>
+    <div class="price">R$ 141,30</div>
+    <a class="btn" href="https://mercadolivre.com/sec/2dSnDSH" target="_blank">Comprar</a>
+</div>
+
+<!-- Produto 8 -->
+<div class="card">
+    <img src="https://mercadolivre.com/sec/1DpG8JG" />
+    <div class="title">Kit Pele Sensível</div>
+    <div class="price">R$ 141,30</div>
+    <a class="btn" href="https://mercadolivre.com/sec/1DpG8JG" target="_blank">Comprar</a>
+</div>
+
+<!-- Produto 9 -->
+<div class="card">
+    <img src="https://mercadolivre.com/sec/2rHrbLj" />
+    <div class="title">Gel de Limpeza GL-02 (500g)</div>
+    <div class="price">R$ 74,00</div>
+    <a class="btn" href="https://mercadolivre.com/sec/2rHrbLj" target="_blank">Comprar</a>
+</div>
+
+<!-- Produto 10 -->
+<div class="card">
+    <img src="https://mercadolivre.com/sec/1H6GBM2" />
+    <div class="title">Gel Salicílico + Glicerina</div>
+    <div class="price">R$ 49,00</div>
+    <a class="btn" href="https://mercadolivre.com/sec/1H6GBM2" target="_blank">Comprar</a>
+</div>
+
+<!-- Produto 11 -->
+<div class="card">
+    <img src="https://mercadolivre.com/sec/2Rohcyz" />
+    <div class="title">Gel de Limpeza GL-03</div>
+    <div class="price">R$ 49,00</div>
+    <a class="btn" href="https://mercadolivre.com/sec/2Rohcyz" target="_blank">Comprar</a>
+</div>
+
+<!-- Produto 12 -->
+<div class="card">
+    <img src="https://mercadolivre.com/sec/2GFcEcm" />
+    <div class="title">Kit 2x GL-01</div>
+    <div class="price">R$ 91,14</div>
+    <a class="btn" href="https://mercadolivre.com/sec/2GFcEcm" target="_blank">Comprar</a>
+</div>
+
+<!-- Produto 13 -->
+<div class="card">
+    <img src="https://mercadolivre.com/sec/2rkZzg5" />
+    <div class="title">Kit 2x GL-03</div>
+    <div class="price">R$ 91,14</div>
+    <a class="btn" href="https://mercadolivre.com/sec/2rkZzg5" target="_blank">Comprar</a>
+</div>
+
+<!-- Produto 14 -->
+<div class="card">
+    <img src="https://mercadolivre.com/sec/14kyw3A" />
+    <div class="title">Base Protetor Solar FPS 50</div>
+    <div class="price">R$ 54,90</div>
+    <a class="btn" href="https://mercadolivre.com/sec/14kyw3A" target="_blank">Comprar</a>
+</div>
+
+<!-- Produto 15 -->
+<div class="card">
+    <img src="https://mercadolivre.com/sec/1ALyFn4" />
+    <div class="title">Base Hyaluronic Nina</div>
+    <div class="price">R$ 55,93</div>
+    <a class="btn" href="https://mercadolivre.com/sec/1ALyFn4" target="_blank">Comprar</a>
+</div>
+
+<!-- Produto 16 -->
+<div class="card">
+    <img src="https://mercadolivre.com/sec/1sXF9gZ" />
+    <div class="title">BB Cream Missha Nº13</div>
+    <div class="price">R$ 68,81</div>
+    <a class="btn" href="https://mercadolivre.com/sec/1sXF9gZ" target="_blank">Comprar</a>
+</div>
+
+<!-- Produto 17 -->
+<div class="card">
+    <img src="https://mercadolivre.com/sec/1L46Vco" />
+    <div class="title">Pó Solto Instant Matte</div>
+    <div class="price">R$ 57,72</div>
+    <a class="btn" href="https://mercadolivre.com/sec/1L46Vco" target="_blank">Comprar</a>
+</div>
+
+<!-- Produto 18 -->
+<div class="card">
+    <img src="https://mercadolivre.com/sec/1zFD4j3" />
+    <div class="title">Base Basic Matte</div>
+    <div class="price">R$ 38,92</div>
+    <a class="btn" href="https://mercadolivre.com/sec/1zFD4j3" target="_blank">Comprar</a>
+</div>
+
+<!-- Produto 19 -->
+<div class="card">
+    <img src="https://mercadolivre.com/sec/2jbRKsM" />
+    <div class="title">Base Soft Matte 24h</div>
+    <div class="price">R$ 71,11</div>
+    <a class="btn" href="https://mercadolivre.com/sec/2jbRKsM" target="_blank">Comprar</a>
+</div>
+
+<!-- Produto 20 -->
+<div class="card">
+    <img src="https://mercadolivre.com/sec/1iiPwZe" />
+    <div class="title">Contorno Stick Fenzza</div>
+    <div class="price">R$ 22,18</div>
+    <a class="btn" href="https://mercadolivre.com/sec/1iiPwZe" target="_blank">Comprar</a>
+</div>
+
+<!-- Produto 21 -->
+<div class="card">
+    <img src="https://mercadolivre.com/sec/2dxEXXS" />
+    <div class="title">Base Matte Nouf</div>
+    <div class="price">R$ 95,90</div>
+    <a class="btn" href="https://mercadolivre.com/sec/2dxEXXS" target="_blank">Comprar</a>
+</div>
+
+<!-- Produto 22 -->
+<div class="card">
+    <img src="https://mercadolivre.com/sec/2gNHnKv" />
+    <div class="title">Pó Plush Fran</div>
+    <div class="price">R$ 48,27</div>
+    <a class="btn" href="https://mercadolivre.com/sec/2gNHnKv" target="_blank">Comprar</a>
+</div>
+
+<!-- Produto 23 -->
+<div class="card">
+    <img src="https://mercadolivre.com/sec/2CMCRU5" />
+    <div class="title">Protetor Solar Nutriex 120ml</div>
+    <div class="price">R$ 24,90</div>
+    <a class="btn" href="https://mercadolivre.com/sec/2CMCRU5" target="_blank">Comprar</a>
+</div>
+
+<!-- Produto 24 -->
+<div class="card">
+    <img src="https://mercadolivre.com/sec/1m7n1rF" />
+    <div class="title">Kit 2x Nutriex FPS 60</div>
+    <div class="price">R$ 49,69</div>
+    <a class="btn" href="https://mercadolivre.com/sec/1m7n1rF" target="_blank">Comprar</a>
+</div>
+
+<!-- Produto 25 -->
+<div class="card">
+    <img src="https://mercadolivre.com/sec/2tvryjJ" />
+    <div class="title">Kit Trio PS-01 + PS-03</div>
+    <div class="price">R$ 145,80</div>
+    <a class="btn" href="https://mercadolivre.com/sec/2tvryjJ" target="_blank">Comprar</a>
 </div>
 
 </div>
+
 </body>
-  </html>
+        </html>
