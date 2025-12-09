@@ -1,226 +1,54 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { ArrowRight, Star, Sparkles, FlameKindling, Boxes, Home, Heart, User, ShoppingBag } from "lucide-react";
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PEACE FAST</title>
+  <style>
+    body { margin:0; font-family:sans-serif; background:#f6f6f6; color:#333; }
+    .banner { width:100%; height:180px; background:#e91e63; display:flex; align-items:center; justify-content:center; color:#fff; font-size:32px; font-weight:bold; border-bottom-left-radius:20px; border-bottom-right-radius:20px; }
+    h2 { color:#e91e63; margin:20px 15px 10px; font-size:20px; }
+    .carrossel { display:flex; overflow-x:auto; gap:15px; padding:10px 15px; }
+    .card { min-width:150px; background:#fff; border:1px solid #ffebf3; border-radius:15px; padding:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
+    .img { width:100%; height:90px; background:#ffebf3; border-radius:10px; }
+    .btn-green { background:#00c853; color:#fff; border:none; width:100%; padding:6px 0; border-radius:10px; margin-top:8px; }
+    .cats { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; padding:0 15px; }
+    .cat { background:#fff; padding:20px 5px; border-radius:15px; text-align:center; border:1px solid #ffebf3; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
+    nav { position:fixed; bottom:0; left:0; width:100%; background:#fff; border-top:1px solid #ffebf3; display:flex; justify-content:space-around; padding:8px 0; box-shadow:0 -2px 8px rgba(0,0,0,0.1);}    nav button { background:none; border:none; font-size:12px; color:#555; display:flex; flex-direction:column; align-items:center; }
+    nav button.active { color:#e91e63; }
+  </style>
+</head>
+<body>
 
-export default function PeaceFastLayout() {
-  return (
-    <div className="w-full min-h-screen bg-[#f6f6f6] text-[#333] font-sans pb-20">
+<div class="banner">PEACE FAST</div>
 
-      {/* BANNER PRINCIPAL COM CARROSSEL ANIMADO */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="w-full h-48 bg-gradient-to-r from-[#e91e63] to-[#ff8fb7] flex items-center justify-center text-white text-3xl font-bold rounded-b-2xl shadow-lg"
-      >
-        PEACE FAST
-      </motion.div>
+<h2>🔥 Lançamentos</h2>
+<div class="carrossel">
+  <div class="card"><div class="img"></div><p>Produto</p><button class="btn-green">Adicionar</button></div>
+  <div class="card"><div class="img"></div><p>Produto</p><button class="btn-green">Adicionar</button></div>
+</div>
 
-      {/* LANÇAMENTOS */}
-      <section className="px-4 mt-6">
-        <h2 className="text-xl font-bold text-[#e91e63] flex items-center gap-2">
-          <FlameKindling /> Lançamentos
-        </h2>
+<h2>⭐ Destaques</h2>
+<div class="carrossel">
+  <div class="card"><div class="img"></div><p>Produto</p><button class="btn-green">Adicionar</button></div>
+  <div class="card"><div class="img"></div><p>Produto</p><button class="btn-green">Adicionar</button></div>
+</div>
 
-        <div className="overflow-x-auto mt-3 flex gap-4 pb-2">
-          {[1, 2, 3].map((item) => (
-            <motion.div
-              key={item}
-              whileHover={{ scale: 1.05 }}
-              className="min-w-[160px] bg-white rounded-2xl shadow p-3 border border-[#ffebf3]"
-            >
-              <div className="w-full h-28 bg-[#ffebf3] rounded-xl" />
-              <p className="mt-2 text-sm font-medium">Produto {item}</p>
-              <span className="text-[#e91e63] font-semibold">R$ 00,00</span>
-              <button className="mt-2 bg-[#00c853] text-white w-full rounded-xl py-1">Adicionar</button>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+<h2>📦 Categorias Populares</h2>
+<div class="cats">
+  <div class="cat">Skincare</div>
+  <div class="cat">Cabelo</div>
+  <div class="cat">Maquiagem</div>
+  <div class="cat">Perfumaria</div>
+  <div class="cat" style="grid-column:span 3;">Higiene Pessoal</div>
+</div>
 
-      {/* DESTAQUES */}
-      <section className="px-4 mt-8">
-        <h2 className="text-xl font-bold text-[#e91e63] flex items-center gap-2">
-          <Star /> Destaques
-        </h2>
-
-        <div className="grid grid-cols-2 gap-4 mt-3">
-          {[1, 2, 3, 4].map((item) => (
-            <motion.div
-              key={item}
-              whileHover={{ scale: 1.05 }}
-              className="bg-white rounded-2xl shadow p-3 border border-[#ffebf3]"
-            >
-              <div className="w-full h-24 bg-[#ffebf3] rounded-xl" />
-              <p className="mt-2 text-sm font-medium">Produto {item}</p>
-              <span className="text-[#e91e63] font-semibold">R$ 00,00</span>
-              <button className="mt-2 bg-[#00c853] text-white w-full rounded-xl py-1">Adicionar</button>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* CATEGORIAS PREMIUM */}
-      <section className="px-4 mt-10">
-        <h2 className="text-xl font-bold text-[#e91e63] flex items-center gap-2">
-          <Boxes /> Categorias
-        </h2>
-
-        <div className="grid grid-cols-3 gap-3 mt-3">
-          {[
-            { name: "Skincare", icon: Sparkles },
-            { name: "Cabelo", icon: Star },
-            { name: "Maquiagem", icon: ArrowRight },
-            { name: "Perfumaria", icon: Heart },
-            { name: "Higiene", icon: ShoppingBag },
-            { name: "Corpo", icon: User }
-          ].map((cat, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ scale: 1.08 }}
-              className="bg-white shadow rounded-2xl p-4 flex flex-col items-center border border-[#ffebf3]"
-            >
-              <cat.icon className="text-[#e91e63]" />
-              <span className="text-sm mt-1 font-medium">{cat.name}</span>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* MENU INFERIOR ESTILO APP */}
-      <nav className="fixed bottom-0 left-0 w-full bg-white shadow-2xl border-t border-[#ffebf3] flex justify-around py-2 z-50">
-        <button className="flex flex-col items-center text-[#e91e63] text-xs">
-          <Home />
-          Início
-        </button>
-
-        <button className="flex flex-col items-center text-gray-500 text-xs">
-          <ShoppingBag />
-          Pedidos
-        </button>
-
-        <button className="flex flex-col items-center text-gray-500 text-xs">
-          <Heart />
-          Favoritos
-        </button>
-
-        <button className="flex flex-col items-center text-gray-500 text-xs">
-          <User />
-          Conta
-        </button>
-      </nav>
-
-    </div>
-  );
-}
-
-<!-- Adicionando todas as funcionalidades solicitadas -->
-<!-- Menu inferior estilo app -->
-<nav class="bottom-menu fixed bottom-0 left-0 w-full bg-white shadow-lg flex justify-around py-2 z-50">
-  <button class="flex flex-col items-center text-pink-600"><span>🏠</span><small>Início</small></button>
-  <button class="flex flex-col items-center text-pink-600"><span>📦</span><small>Pedidos</small></button>
-  <button class="flex flex-col items-center text-pink-600"><span>❤️</span><small>Favoritos</small></button>
-  <button class="flex flex-col items-center text-pink-600"><span>👤</span><small>Conta</small></button>
+<nav>
+  <button class="active">🏠 Início</button>
+  <button>📦 Pedidos</button>
+  <button>💗 Favoritos</button>
+  <button>👤 Conta</button>
 </nav>
 
-<!-- Carrossel Automático -->
-<script>
-let index = 0;
-setInterval(() => {
-  const items = document.querySelectorAll('.carousel-item');
-  items.forEach((el, i) => el.style.display = i === index ? 'block' : 'none');
-  index = (index + 1) % items.length;
-}, 4000);
-</script>
-
-<!-- Animações suaves -->
-<style>
-.fade { animation: fadeIn 0.8s ease-in-out; }
-@keyframes fadeIn { from {opacity:0; transform: translateY(10px);} to {opacity:1; transform: translateY(0);} }
-</style>
-
-<!-- Ícones de favoritos nos cards -->
-<div class="favorite absolute top-2 right-2 text-pink-600 text-xl">❤</div>
-
-<!-- Botões verdes estilo comprar -->
-<button class="bg-green-600 text-white w-full py-2 rounded-lg mt-2">Comprar</button>
-
-<!-- Carrosséis de Lançamentos e Destaques -->
-<section class="mt-6">
-  <h2 class="text-xl font-bold text-pink-700 mb-2">Lançamentos</h2>
-  <div class="carousel flex overflow-x-auto gap-4"></div>
-</section>
-<section class="mt-6">
-  <h2 class="text-xl font-bold text-pink-700 mb-2">Destaques</h2>
-  <div class="carousel flex overflow-x-auto gap-4"></div>
-</section>
-
-<!-- ============================= -->
-<!-- PAGINA DE PRODUTO COMPLETA -->
-<!-- ============================= -->
-<section id="product-page" class="hidden p-4 fade">
-  <button onclick="goHome()" class="text-pink-600 mb-4">⬅ Voltar</button>
-  <div class="w-full h-64 bg-gray-200 rounded-xl mb-4"></div>
-  <h1 class="text-2xl font-bold text-pink-700">Nome do Produto</h1>
-  <p class="text-lg text-gray-700 mt-2">Descrição detalhada do produto aqui...</p>
-  <p class="text-3xl font-bold text-green-600 mt-4">R$ 0,00</p>
-  <button class="bg-green-600 text-white w-full py-3 text-lg rounded-xl mt-6">Comprar</button>
-</section>
-
-<!-- ============================= -->
-<!-- PAGINA DE CATEGORIAS -->
-<!-- ============================= -->
-<section id="categories-page" class="hidden p-4 fade">
-  <button onclick="goHome()" class="text-pink-600 mb-4">⬅ Voltar</button>
-  <h2 class="text-2xl font-bold text-pink-700 mb-4">Categorias</h2>
-  <div class="grid grid-cols-2 gap-4">
-    <div class="p-4 bg-pink-100 rounded-xl text-center font-bold text-pink-700">Skincare</div>
-    <div class="p-4 bg-pink-100 rounded-xl text-center font-bold text-pink-700">Cabelo</div>
-    <div class="p-4 bg-pink-100 rounded-xl text-center font-bold text-pink-700">Maquiagem</div>
-    <div class="p-4 bg-pink-100 rounded-xl text-center font-bold text-pink-700">Perfumaria</div>
-    <div class="p-4 bg-pink-100 rounded-xl text-center font-bold text-pink-700">Higiene</div>
-  </div>
-</section>
-
-<!-- ============================= -->
-<!-- PAGINA DE FAVORITOS -->
-<!-- ============================= -->
-<section id="favorites-page" class="hidden p-4 fade">
-  <button onclick="goHome()" class="text-pink-600 mb-4">⬅ Voltar</button>
-  <h2 class="text-2xl font-bold text-pink-700 mb-4">Favoritos</h2>
-  <p class="text-gray-600">Nenhum item salvo ainda.</p>
-</section>
-
-<!-- ============================= -->
-<!-- PAGINA DA CONTA / PERFIL -->
-<!-- ============================= -->
-<section id="account-page" class="hidden p-4 fade">
-  <button onclick="goHome()" class="text-pink-600 mb-4">⬅ Voltar</button>
-  <h2 class="text-2xl font-bold text-pink-700 mb-4">Minha Conta</h2>
-  <div class="bg-pink-100 rounded-xl p-4 mb-3 font-bold text-pink-700">Meus Dados</div>
-  <div class="bg-pink-100 rounded-xl p-4 mb-3 font-bold text-pink-700">Meus Pedidos</div>
-  <div class="bg-pink-100 rounded-xl p-4 mb-3 font-bold text-pink-700">Endereços</div>
-  <div class="bg-pink-100 rounded-xl p-4 mb-3 font-bold text-pink-700">Sair</div>
-</section>
-
-<!-- ============================= -->
-<!-- MENU INFERIOR TOTALMENTE FUNCIONAL -->
-<!-- ============================= -->
-<script>
-function goHome() {
-  document.querySelectorAll('section').forEach(sec => sec.classList.add('hidden'));
-  document.getElementById('home').classList.remove('hidden');
-}
-function openPage(page) {
-  document.querySelectorAll('section').forEach(sec => sec.classList.add('hidden'));
-  document.getElementById(page).classList.remove('hidden');
-}
-</script>
-
-<nav class="bottom-menu fixed bottom-0 left-0 w-full bg-white shadow-xl flex justify-around py-2 z-50 text-pink-700 font-bold">
-  <button onclick="openPage('home')" class="flex flex-col items-center">🏠<small>Início</small></button>
-  <button onclick="openPage('favorites-page')" class="flex flex-col items-center">❤️<small>Favoritos</small></button>
-  <button onclick="openPage('categories-page')" class="flex flex-col items-center">📦<small>Categorias</small></button>
-  <button onclick="openPage('account-page')" class="flex flex-col items-center">👤<small>Conta</small></button>
-    </nav>
-    
+</body>
+</html>
