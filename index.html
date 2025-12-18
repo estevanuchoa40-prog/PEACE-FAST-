@@ -1,147 +1,373 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>GrowthPro</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPACEX MONEY</title>
+<meta name="description" content="Guia completo para ganhar dinheiro com vídeos usando YouTube, IA e formatos educativos." />
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Poppins',sans-serif;background:#0b0b0b;color:#fff}
-.page{display:none;min-height:100vh;align-items:center;justify-content:center;padding:20px;animation:fade .35s ease}
-.page.active{display:flex}
-@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-.card{width:100%;max-width:420px;background:#121212;border-radius:22px;box-shadow:0 20px 60px rgba(0,0,0,.6);overflow:hidden}
-.inner{padding:22px;text-align:center}
-.hero{height:200px;background:linear-gradient(120deg,#ff3b3b55,#000),url('https://images.unsplash.com/photo-1554284126-aa88f22d8b74?auto=format&fit=crop&w=900') center/cover}
-.logo{font-size:28px;font-weight:700}
-.logo span{color:#ff3b3b}
-.secure{font-size:12px;color:#7CFF9B;margin:6px 0 14px}
-h1{font-size:22px;margin-bottom:10px}
-p{font-size:14px;color:#cfcfcf;line-height:1.6;margin-bottom:16px}
-button{width:100%;padding:14px;border-radius:40px;border:none;background:linear-gradient(90deg,#ff3b3b,#c80000);color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:.25s}
-button:hover{filter:brightness(1.1)}
-.progress{height:6px;background:#222;border-radius:6px;overflow:hidden;margin:16px 0}
-.progress div{height:100%;background:#ff3b3b;transition:.4s}
-.option{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:14px;padding:14px;margin-bottom:12px;cursor:pointer;transition:.25s}
-.option:hover{border-color:#ff3b3b}
-.step{font-size:12px;color:#aaa;margin-bottom:6px}
-.meter{height:150px;background:#0d0d0d;border-radius:20px;display:flex;align-items:flex-end;overflow:hidden;margin:20px 0}
-.meter div{width:100%;height:0;background:linear-gradient(180deg,#ff3b3b,#ff7676);animation:grow 1.5s forwards}
-@keyframes grow{to{height:72%}}
-.reader{background:#0d0d0d;border-radius:14px;padding:14px;height:280px;overflow:auto;text-align:left;font-size:14px}
-.lock{opacity:.35;filter:blur(2px)}
-.price{font-size:26px;color:#ff3b3b;margin:10px 0}
-input{width:100%;padding:12px;border-radius:12px;border:none;margin:10px 0;font-size:14px}
-.testimonial{background:#181818;border-radius:14px;padding:14px;margin:10px 0;font-size:13px;color:#ddd}
-.error{color:#ff6b6b;font-size:13px;margin-top:8px}
+:root{
+  --bg:#0b0f1a;
+  --card:#12172a;
+  --primary:#00f0ff;
+  --accent:#ff00f0;
+  --text:#eaeaf0;
+  --muted:#9aa3b2;
+  --success:#22c55e;
+}
+
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  overflow-x:hidden;
+  position:relative;
+}
+
+/* ===== FUNDO NEON SUAVE ===== */
+body::before{
+  content:"";
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:radial-gradient(circle at center, rgba(0,240,255,0.02), transparent 50%), radial-gradient(circle at 70% 20%, rgba(255,0,240,0.02), transparent 50%);
+  z-index:-2;
+  animation:moveBg 30s linear infinite;
+}
+@keyframes moveBg{
+  0%{background-position:0 0, 0 0;}
+  50%{background-position:600px 400px, -500px 300px;}
+  100%{background-position:0 0, 0 0;}
+}
+
+.container{
+  max-width:980px;
+  margin:auto;
+  padding:24px;
+}
+
+/* ===== TITULO NEON ===== */
+h1,h2,h3{
+  font-family:'Orbitron',sans-serif;
+  letter-spacing:1px;
+  text-shadow:0 0 5px #00f0ff,0 0 10px #00f0ff,0 0 15px #ff00f0,0 0 20px #ff00f0;
+}
+
+header h1 span{
+  display:inline-block;
+  background:linear-gradient(90deg,var(--primary),var(--accent));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:glowText 2s ease-in-out infinite alternate;
+}
+@keyframes glowText{
+  0%{text-shadow:0 0 5px #00f0ff,0 0 10px #00f0ff,0 0 15px #ff00f0;}
+  50%{text-shadow:0 0 8px #00f0ff,0 0 15px #ff00f0,0 0 20px #00f0ff;}
+  100%{text-shadow:0 0 5px #00f0ff,0 0 10px #ff00f0,0 0 15px #ff00f0;}
+}
+
+/* ===== SECTIONS ===== */
+section{padding:60px 8%;}
+
+/* ===== CARDS ===== */
+.card{
+  background:linear-gradient(180deg,#151b34,#0e1325);
+  border-radius:16px;
+  padding:30px;
+  margin-bottom:20px;
+  box-shadow:0 0 20px rgba(0,255,255,0.3),0 0 15px rgba(255,0,255,0.2);
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 0 50px rgba(0,255,255,0.6),0 0 30px rgba(255,0,255,0.5);
+}
+
+.grid{
+  display:grid;
+  gap:16px;
+}
+@media(min-width:760px){
+  .grid.cols-2{grid-template-columns:repeat(2,1fr);}
+  .grid.cols-3{grid-template-columns:repeat(3,1fr);}
+}
+
+/* BADGES */
+.badge{
+  display:inline-block;
+  font-size:.75rem;
+  padding:6px 10px;
+  border-radius:999px;
+  background:rgba(0,255,255,.1);
+  color:#fff;
+  border:1px solid rgba(0,255,255,.2);
+  text-shadow:0 0 3px #0ff;
+}
+
+/* VIDEO */
+.video{
+  position:relative;
+  border-radius:16px;
+  overflow:hidden;
+  border:2px solid var(--accent);
+  box-shadow:0 0 40px rgba(0,255,255,0.4),0 0 20px rgba(255,0,255,0.3);
+}
+.video::before{content:""; display:block; padding-top:56.25%;}
+.video iframe{position:absolute; inset:0; width:100%; height:100%;}
+
+/* BOTÕES */
+.btn{
+  appearance:none;
+  border:0;
+  border-radius:16px;
+  padding:16px 28px;
+  font-weight:800;
+  cursor:pointer;
+  text-decoration:none;
+  color:#0b0f17;
+  background:linear-gradient(90deg,var(--primary),var(--accent));
+  background-size:200% auto;
+  box-shadow:0 0 15px rgba(0,255,255,0.4);
+  transition:transform .2s ease,box-shadow .2s ease, background-position .5s;
+  animation:btnPulse 2s infinite;
+}
+.btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 60px rgba(0,255,255,0.7),0 0 35px rgba(255,0,255,0.5);
+  background-position:100% center;
+}
+@keyframes btnPulse{
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(1.05);}
+}
+.btn.secondary{
+  background:#1b2350;
+  box-shadow:0 0 20px rgba(0,255,255,0.3);
+}
+
+/* BENEFITS */
+.benefits{
+  text-align:left;
+  margin:20px 0 30px;
+  padding:20px;
+  background:rgba(0,255,255,0.05);
+  border-radius:16px;
+  border:1px solid rgba(0,255,255,0.15);
+}
+.benefits h3{
+  font-size:1.2rem;
+  color:var(--primary);
+  margin-bottom:10px;
+}
+.benefits ul{
+  list-style:none;
+  padding-left:0;
+}
+.benefits ul li{
+  margin-bottom:10px;
+  font-size:1rem;
+  position:relative;
+  padding-left:25px;
+}
+.benefits ul li::before{
+  content:"✔";
+  position:absolute;
+  left:0;
+  color:var(--success);
+  font-weight:bold;
+}
+
+/* SELOS */
+.seal{
+  display:inline-block;
+  padding:12px 20px;
+  border-radius:12px;
+  background:var(--success);
+  color:#fff;
+  font-weight:700;
+  margin-top:10px;
+  box-shadow:0 0 30px rgba(34,197,94,0.6),0 0 15px rgba(34,197,94,0.4);
+  text-transform:uppercase;
+  animation:glowSeal 2s ease-in-out infinite alternate;
+}
+@keyframes glowSeal{
+  0%{box-shadow:0 0 15px rgba(34,197,94,0.4),0 0 8px rgba(34,197,94,0.2);}
+  50%{box-shadow:0 0 50px rgba(34,197,94,0.9),0 0 25px rgba(34,197,94,0.6);}
+  100%{box-shadow:0 0 15px rgba(34,197,94,0.4),0 0 8px rgba(34,197,94,0.2);}
+}
+
+/* FOOTER */
+footer{
+  margin:48px 0 16px;
+  text-align:center;
+  color:var(--muted);
+  border-top:1px solid rgba(255,255,255,.08);
+  padding-top:18px;
+}
+
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  right:16px;
+  bottom:16px;
+  border-radius:999px;
+  padding:14px 18px;
+  background:linear-gradient(90deg,#22c55e,#16a34a);
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+  box-shadow:0 16px 36px rgba(34,197,94,.45);
+}
+
+/* SCROLL REVEAL */
+.reveal{
+  opacity:0;
+  transform:translateY(50px) scale(0.95);
+  transition:all 0.8s ease;
+}
+.reveal.active{
+  opacity:1;
+  transform:translateY(0) scale(1);
+}
+
+/* TYPING */
+.typing{
+  overflow:hidden;
+  white-space:nowrap;
+  border-right:3px solid var(--accent);
+  width:0;
+  animation:typing 4s steps(40,end) forwards,blink .8s infinite;
+}
+@keyframes typing{to{width:100%}}
+@keyframes blink{50%{border-color:transparent}}
 </style>
 </head>
 <body>
 
-<!-- ENTRADA -->
-<section class="page active" id="p1"><div class="card"><div class="hero"></div><div class="inner">
-<div class="logo">Growth<span>Pro</span></div>
-<div class="secure">🔒 Plataforma segura • Avaliação responsável</div>
-<h1>Análise de Potencial OG</h1>
-<p>Descubra quanto seu corpo ainda pode evoluir nos próximos 30 dias.</p>
-<button onclick="go(2)">COMEÇAR A AVALIAÇÃO</button>
-</div></div></section>
+<div class="container">
 
-<!-- PERGUNTAS -->
-<section class="page" id="p2"><div class="card"><div class="inner">
-<p class="step">Pergunta 1 de 5</p><div class="progress"><div style="width:20%"></div></div>
-<h1>Quanto tempo você passa sentado por dia?</h1>
-<div class="option" onclick="go(3)">Menos de 4 horas</div>
-<div class="option" onclick="go(3)">Entre 4 e 8 horas</div>
-<div class="option" onclick="go(3)">Mais de 8 horas</div>
-</div></div></section>
+<header class="reveal">
+  <span class="badge">Método Simples</span>
+  <h1 id="title" class="reveal"></h1>
+  <p class="typing">Aprenda do zero a criar vídeos, sites e monetizar com YouTube e IA — sem complicação.</p>
+  <div class="hero-cta">
+    <a class="btn" href="#oferta-acode">Ver Oferta</a>
+    <a class="btn secondary" href="#como">Como Funciona</a>
+  </div>
+</header>
 
-<section class="page" id="p3"><div class="card"><div class="inner">
-<p class="step">Pergunta 2 de 5</p><div class="progress"><div style="width:40%"></div></div>
-<h1>Sente dores nas costas ou pescoço?</h1>
-<div class="option" onclick="go(4)">Nunca</div>
-<div class="option" onclick="go(4)">Às vezes</div>
-<div class="option" onclick="go(4)">Frequentemente</div>
-</div></div></section>
+<section id="como" class="section reveal">
+  <div class="grid cols-3 reveal">
+    <div class="card"><span class="badge">1</span><h3>Escolha o Formato</h3><p>YouTube, Shorts, IA ou educativo. Você decide.</p></div>
+    <div class="card"><span class="badge">2</span><h3>Crie com Simplicidade</h3><p>Passo a passo prático, sem termos difíceis.</p></div>
+    <div class="card"><span class="badge">3</span><h3>Monetize</h3><p>Estratégias claras para começar.</p></div>
+  </div>
+</section>
 
-<section class="page" id="p4"><div class="card"><div class="inner">
-<p class="step">Pergunta 3 de 5</p><div class="progress"><div style="width:60%"></div></div>
-<h1>Você alonga o corpo?</h1>
-<div class="option" onclick="go(5)">Nunca</div>
-<div class="option" onclick="go(5)">Às vezes</div>
-<div class="option" onclick="go(5)">Sempre</div>
-</div></div></section>
+<section class="section reveal">
+  <div class="card">
+    <span class="badge">Vídeo</span>
+    <h3>Assista ao Short</h3>
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/RJpILFgt69Y" allowfullscreen></iframe>
+    </div>
+    <div style="margin-top:20px">
+      <h3>Você quer aprender a fazer isso?</h3>
+      <p id="pergunta" style="margin-top:10px;font-weight:600"></p>
+      <input id="resposta" placeholder="Digite sua resposta aqui" style="margin-top:10px;width:100%;padding:12px;border-radius:10px;border:none;font-size:16px" />
+      <button class="btn" style="margin-top:10px" onclick="proximaPergunta()">Próximo</button>
+    </div>
+  </div>
+</section>
 
-<section class="page" id="p5"><div class="card"><div class="inner">
-<p class="step">Pergunta 4 de 5</p><div class="progress"><div style="width:80%"></div></div>
-<h1>Como está sua postura hoje?</h1>
-<div class="option" onclick="go(6)">Ruim</div>
-<div class="option" onclick="go(6)">Regular</div>
-<div class="option" onclick="go(6)">Boa</div>
-</div></div></section>
+<!-- Para que Serve o Site -->
+<section class="section reveal">
+  <h2>Para que Serve o Site</h2>
+  <div class="card reveal">
+    <p>O <strong>SPACEX MONEY</strong> foi desenvolvido para ensinar você a <b>ganhar dinheiro com vídeos</b> de forma prática e direta, usando YouTube, Shorts, IA e conteúdos educativos. Este método é ideal para quem quer começar do zero e obter resultados reais rapidamente.</p>
+    <ul>
+      <li>Aprenda a criar conteúdo rápido e profissional.</li>
+      <li>Monetize vídeos no YouTube e outras plataformas.</li>
+      <li>Use inteligência artificial para acelerar a produção.</li>
+      <li>Método passo a passo, simples e direto.</li>
+    </ul>
+  </div>
+</section>
 
-<section class="page" id="p6"><div class="card"><div class="inner">
-<p class="step">Última etapa</p><div class="progress"><div style="width:100%"></div></div>
-<h1>Qual sua altura (cm) e idade?</h1>
-<input placeholder="Ex: 175">
-<input placeholder="Ex: 25">
-<button onclick="go(7)">CALCULAR RESULTADO</button>
-</div></div></section>
+<!-- Oferta -->
+<section id="oferta-acode" class="section reveal">
+  <div class="card">
+    <span class="badge">Oferta Especial</span>
+    <h3>Pacote SPACEX MONEY</h3>
+    <p>Valor: <strong>R$10,00</strong></p>
+    <div class="benefits">
+      <h3>O que você recebe:</h3>
+      <ul>
+        <li>Gerar vídeos que podem ser monetizados</li>
+        <li>Site completo para exibir seus conteúdos</li>
+        <li>Guia passo a passo e dicas exclusivas</li>
+        <li>Ferramentas e suporte via WhatsApp</li>
+      </ul>
+    </div>
+    <a class="btn" href="https://api.whatsapp.com/send?phone=5586998052171&text=Quero+comprar+o+pacote+SPACEX+MONEY+via+Pix+10071985328" target="_blank" style="margin-top:10px; display:inline-block;">
+      Pagar via Pix / WhatsApp
+    </a>
+    <div class="seal">Pagamento Seguro</div>
+  </div>
+</section>
 
-<!-- RESULTADO -->
-<section class="page" id="p7"><div class="card"><div class="inner">
-<h1>Seu Resultado</h1>
-<p>Seu corpo apresenta sinais claros de compressão funcional reversível.</p>
-<div class="meter"><div></div></div>
-<button onclick="go(8)">VER CONTEÚDO GRATUITO</button>
-</div></div></section>
-
-<!-- PRÉVIA + DEPOIMENTOS -->
-<section class="page" id="p8"><div class="card"><div class="inner">
-<h1>Ebook GrowthPro (Prévia)</h1>
-<div class="reader">
-<p><strong>Capítulo 1:</strong> Altura funcional não é genética.</p>
-<p><strong>Capítulo 2:</strong> Compressão da coluna.</p>
-<hr>
-<div class="lock">
-<p><strong>Capítulo 3:</strong> Protocolos avançados 🔒</p>
-<p><strong>Capítulo 4:</strong> Plano completo 30 dias 🔒</p>
+<footer class="reveal">© 2025 SPACEX MONEY • Desenvolvido por sTeVe UcHoA</footer>
 </div>
-</div>
-<h1 style="margin-top:14px">Depoimentos</h1>
-<div class="testimonial">"Melhorei minha postura em poucas semanas" — Marcos A.</div>
-<div class="testimonial">"Conteúdo simples e direto" — João P.</div>
-<div class="testimonial">"Mudou minha consciência corporal" — Lucas R.</div>
-<button onclick="go(9)">LIBERAR COMPLETO</button>
-</div></div></section>
 
-<!-- PAGAMENTO -->
-<section class="page" id="p9"><div class="card"><div class="inner">
-<h1>Acesso Completo</h1>
-<p class="price">R$ 20,00</p>
-<p><strong>Pix:</strong> 10071985328</p>
-<input id="code" placeholder="Digite o código de acesso">
-<button onclick="check()">LIBERAR AGORA</button>
-<div id="msg" class="error"></div>
-</div></div></section>
-
-<!-- EBOOK COMPLETO -->
-<section class="page" id="p10"><div class="card"><div class="inner">
-<h1>Ebook Liberado ✅</h1>
-<div class="reader">
-<p><strong>Capítulo 1:</strong> Fundamentos científicos</p>
-<p><strong>Capítulo 2:</strong> Descompressão articular</p>
-<p><strong>Capítulo 3:</strong> Respiração e mobilidade</p>
-<p><strong>Capítulo 4:</strong> Rotina diária</p>
-<p><strong>Capítulo 5:</strong> Plano 30 dias</p>
-</div>
-</div></div></section>
+<a class="whatsapp" href="https://wa.me/5586998052171" target="_blank">WhatsApp</a>
 
 <script>
-function go(n){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('p'+n).classList.add('active');window.scrollTo(0,0)}
-function check(){if(document.getElementById('code').value==='GROWTHPRO20'){go(10)}else{document.getElementById('msg').innerText='Código inválido'}}
+// PERGUNTAS INTERATIVAS
+const perguntas = [
+  "Você já tentou ganhar dinheiro com vídeos?",
+  "Você tem celular com internet todos os dias?",
+  "Você gostaria de aprender mesmo começando do zero?",
+  "Quanto você gostaria de ganhar por mês com isso?"
+];
+let i = 0;
+const p = document.getElementById('pergunta');
+const r = document.getElementById('resposta');
+p.innerText = perguntas[i];
+function proximaPergunta(){
+  r.value = "";
+  i++;
+  if(i < perguntas.length){
+    p.innerText = perguntas[i];
+  } else {
+    p.innerText = "Perfeito! Esse método foi feito pra você.";
+    r.style.display = "none";
+  }
+}
+
+// TITULO ANIMADO
+const titleText = "SPACEX MONEY";
+const titleEl = document.getElementById('title');
+if(titleEl){
+  titleEl.innerHTML = titleText.split('').map((l,i)=>`<span style="animation-delay:${i*0.12}s">${l}</span>`).join('');
+}
+
+// SCROLL REVEAL
+const reveals = document.querySelectorAll('.reveal');
+function revealOnScroll(){
+  reveals.forEach((el,idx)=>{
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+    if(elementTop < windowHeight - 80){
+      setTimeout(()=>el.classList.add('active'), idx*100);
+    }
+  });
+}
+window.addEventListener('scroll', revealOnScroll);
+revealOnScroll();
 </script>
 </body>
   </html>
-                                                           
